@@ -1,0 +1,50 @@
+{
+  "name": "ci-testsuit-demo",
+  "version": "1.0.0",
+  "description": "This repository is for validating code through running test cases on CI.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint ./index.js",
+    "start": "node index.js",
+    "build": "gulp",
+    "test": "jest",
+    "test:coveralls": "jest --coverage | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anandprajapati1/CI-TestSuit-Demo.git"
+  },
+  "author": "Anand Prajapati",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/anandprajapati1/CI-TestSuit-Demo/issues"
+  },
+  "homepage": "https://github.com/anandprajapati1/CI-TestSuit-Demo#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "babel-jest": "^24.8.0",
+    "babelify": "~5.0.3",
+    "browser-sync": "^1.7.1",
+    "browserify": "^6.3.3",
+    "coveralls": "^3.0.4",
+    "eslint": "^6.0.0",
+    "gulp": "~3.8.10",
+    "gulp-rename": "^1.2.0",
+    "jest": "^24.8.0",
+    "lodash": "^2.4.1",
+    "rimraf": "~2.2.8",
+    "vinyl-source-stream": "^1.0.0",
+    "watchify": "^2.1.1"
+  },
+  "jest": {
+    "clearMocks": true,
+    "coverageDirectory": "coverage",
+    "collectCoverageFrom": [
+      "*src/**/*.js"
+    ],
+    "coverageReporters": ["lcov", "text", "clover"],
+    "testEnvironment": "node",
+    "verbose": true
+  }
+}
