@@ -1,5 +1,6 @@
 import {Person} from './js/Person';
 import { Subscriber, newsLetter } from "./js/PubSub";
+import { RevealingModule } from "./js/revealingModule";
 
 global.app = function () {
     //>> Usage of module pattern
@@ -15,12 +16,17 @@ global.app = function () {
     const Ram = new Subscriber("Ramkumar");
     const Lucky = new Subscriber("Lakshman");
 
-    newspaper.subscribe(Ram, Ram.subsNotification);
-    newspaper.subscribe(Lucky, Lucky.subsNotification);
+    newspaper.subscribe(Ram);
+    newspaper.subscribe(Lucky);
 
 
-    // newspaper.pushNewsNotification("Pakistan all out at 0!!");
-    // newspaper.pushNewsNotification("India won!!");
+    newspaper.pushNewsNotification("Pakistan all out at 0!!");
+    newspaper.pushNewsNotification("India won!!");
+
+    //>> Revealing module example
+    var _revealingObject = new RevealingModule();
+    // _revealingObject.setName('Anand');
+    // console.log(_revealingObject.getName());
 
     return tom.fullName;
 };

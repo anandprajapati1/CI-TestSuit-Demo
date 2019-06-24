@@ -9,7 +9,7 @@
     "build": "gulp build",
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls"
+    "test:coveralls": "set NODE_ENV=test&& jest --coverage --coverageReporters=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",

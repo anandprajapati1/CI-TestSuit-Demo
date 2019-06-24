@@ -27,8 +27,8 @@ class RevealingModule {
   }
 }
 
-export {RevealingModule as myRevealingObject};
+export {RevealingModule};
 
-var _RevealingObject = new RevealingModule();
-_RevealingObject.setName('Anand');
-console.log(_RevealingObject.getName());
+// var _RevealingObject = new RevealingModule();
+// _RevealingObject.setName('Anand');
+// console.log(_RevealingObject.getName());
