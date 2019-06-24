@@ -4,9 +4,9 @@
   "description": "This repository is for validating code through running test cases on CI.",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint ./index.js",
-    "start": "node index.js",
-    "build": "gulp",
+    "lint": "eslint src/**/*.js",
+    "start": "gulp watch",
+    "build": "gulp build",
     "test": "jest",
     "test:coveralls": "jest --coverage | coveralls"
   },
@@ -29,6 +29,7 @@
     "browserify": "^6.3.3",
     "coveralls": "^3.0.4",
     "eslint": "^6.0.0",
+    "eslint-plugin-jest": "^22.7.1",
     "gulp": "~3.8.10",
     "gulp-rename": "^1.2.0",
     "jest": "^24.8.0",
@@ -43,7 +44,11 @@
     "collectCoverageFrom": [
       "*src/**/*.js"
     ],
-    "coverageReporters": ["lcov", "text", "clover"],
+    "coverageReporters": [
+      "lcov",
+      "text",
+      "clover"
+    ],
     "testEnvironment": "node",
     "verbose": true
   }
