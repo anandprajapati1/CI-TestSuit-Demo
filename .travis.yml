@@ -13,7 +13,7 @@ install:
 
 script: 
   - npm run lint
-  - npm run test:coveralls
+  - npm run test:coverage
   # - npm start
 
 notifications: 

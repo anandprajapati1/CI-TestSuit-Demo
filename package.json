@@ -8,7 +8,8 @@
     "start": "gulp watch",
     "build": "gulp build",
     "test": "jest",
-    "test:coveralls": "jest --coverage | coveralls"
+    "test:coverage": "jest --coverage",
+    "test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",

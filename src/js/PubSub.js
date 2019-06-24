@@ -44,14 +44,15 @@ class newsLetter {
     }
 
     notify() {
-        this.subscribers._actions.forEach(function (action) {
-            action(news);
+        // let self = this;
+        this.subscribers._actions.forEach((action) => {
+            action(this.news);
         });
     }
 
     onLatestNewsArrived(newsItem) {
-        news = newsItem;
-        notify();
+        this.news = newsItem;
+        this.notify();
     }
 }
 
