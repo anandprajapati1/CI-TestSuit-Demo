@@ -1,32 +1,34 @@
 /**
  * Revealing module pattern
  */
-var myRevealingObject = (function () {
-  var privateVarName = "Ben Cherry",
-    publicVarMessage = "Hey there!";
-
-  function privateFunction() {
-    console.log(publicVarMessage, privateVarName);
+class RevealingModule {
+  constructor () {
+    this.privateVarName = 'Ben Cherry';
+    this.publicVarMessage = 'Hey there!';
+    
+    // Return revealing pointer
+    return {
+      setName: this.publicSetName,
+      getName: this.publicGetName,
+      greetingMessage: this.publicVarMessage
+    };
   }
 
-  function publicSetName(strName) {
-    privateVarName = strName;
+  privateFunction() {
+    console.log(this.publicVarMessage, this.privateVarName);
   }
 
-  function publicGetName() {
-    return privateVarName;
+  publicSetName (strName) {
+    this.privateVarName = strName;
   }
 
-  // Return revealing pointer
-  return {
-    setName: publicSetName,
-    getName: publicGetName,
-    // printName: privateFunction,
-    greetingMessage: publicVarMessage
+  publicGetName () {
+    return this.privateVarName;
   }
-})();
+}
 
-// myRevealingObject.greetingMessage = "Hello!"
-myRevealingObject.setName('Anand');
-console.log(myRevealingObject.getName());
-// myRevealingObject.printName();
+export {RevealingModule as myRevealingObject};
+
+var _RevealingObject = new RevealingModule();
+_RevealingObject.setName('Anand');
+console.log(_RevealingObject.getName());
